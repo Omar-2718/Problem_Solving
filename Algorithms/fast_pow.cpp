@@ -1,5 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
 int fast_pow(int base,int p,int mod = 1000000007){
     int res = 1;
     base %= mod;
