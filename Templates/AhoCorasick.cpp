@@ -72,14 +72,21 @@ int32_t main() {
         v.erase(unique(v.begin(), v.end()), v.end());
         AC aho;
         vector<int> len(n + 3, 0);
+        // Each pattern get an id from aho.add_pattern
         for (auto s: v) {
             len[aho.add_pattern(s)] = s.size();
         }
+        //Compute duh
         aho.compute();
         string s; cin >> s;
         n = s.size();
         vector<int> dp(n, n + 10);
         int u = 0;
+        // u is id
+        // advance for each idx
+        // and v get to next state (smallest suffix) using out_link
+        // aho.out is all words in state which basically same word count
+        // for each idx the max number of suffix is sqrt(n)
         for (int i = 0; i < n; i++) {
             char c = s[i];
             u = aho.advance(u, c);
