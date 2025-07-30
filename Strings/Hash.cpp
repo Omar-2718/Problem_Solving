@@ -5,8 +5,8 @@ int b1 = uniform_int_distribution<int>(0.1 * m1, 0.9 * m1)(rng);
 int m2 = 991831889;
 int b2 = uniform_int_distribution<int>(0.1 * m2, 0.9 * m2)(rng);
 
-vector<int> pw1,iv1;
-vector<int>pw2,iv2;
+vector<int> pw1,iv1(1);
+vector<int>pw2,iv2(1);
 
 int pow_mod(int a,int b,int m){
     int ans = 1;
@@ -26,6 +26,7 @@ void init(int n){
     pw2.assign(n+2,1);
     iv1.assign(n+2,1);
     iv2.assign(n+2,1);
+    pw1[0] = pw2[0] = 1;
     iv1[1] = pow_mod(b1,m1-2,m1);
     iv2[1] = pow_mod(b2,m2-2,m2);
     for(int i =1;i<=n;i++){
