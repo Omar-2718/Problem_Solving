@@ -1,4 +1,10 @@
 #include <bits/stdc++.h>
+#define msb(x) (63 - __builtin_clzll(x))
+#define lsb(x) (__builtin_ctzll(x))
+#define bit_count(x) (__builtin_popcountll(x))
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx2")
+
 using namespace std;
 struct node{
     // set variables of nodes here
